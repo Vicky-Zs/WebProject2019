@@ -1,0 +1,279 @@
+font-face{
+	font-family: 'Lecteur';
+	src: url("lecteur_heureux.otf"); 
+}
+@font-face{
+	font-family: 'Plum';
+	src: url("PlumBAL.ttf"); 
+}
+@font-face{
+	font-family: 'Teacher';
+	src: url("Teacher.ttf"); 
+}
+@font-face{
+	font-family: 'child';
+	src: url("childwriting.ttf"); 
+}
+@font-face{
+	font-family: 'crayon';
+	src: url("CrayonL.ttf"); 
+}
+@font-face{
+	font-family: 'drop';
+	src: url("codropsicons.ttf");
+}
+@font-face{
+	font-family: 'bellerose';
+	src: url("bellerose.ttf");
+}
+@font-face{
+	font-family: 'roadrage';
+	src: url("road_rage.otf");
+}
+
+div a {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.35em;
+}
+/*EFFET 21*/
+.cl-effect-21 a {
+	padding: 10px;
+	color: white;
+	font-weight: 700;
+	text-shadow: none;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.cl-effect-21 a::before,
+.cl-effect-21 a::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.cl-effect-21 a::before {
+	top: 0;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.cl-effect-21 a::after {
+	bottom: 0;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.cl-effect-21 a:hover,
+.cl-effect-21 a:focus {
+	color: #fff;
+}
+
+.cl-effect-21 a:hover::before,
+.cl-effect-21 a:focus::before,
+.cl-effect-21 a:hover::after,
+.cl-effect-21 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+/*EFFET 21 FIN*/
+
+body{
+	background: pink url("Lined_002.jpg") no-repeat;
+	background-position: center;
+	background-size: 150%;
+	max-width: 100%;
+}
+
+#connTxt{
+	font-size:1.35em;
+}
+#connTxt:hover{
+	text-shadow: 
+	2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, -2px 0 0 black, 
+	2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black, -2px -2px 0 black;
+	/*text-shadow: h-shadow v-shadow blur-radius color*/
+}
+#formIns{
+	background-image: url("greentab.jpg");
+	height: auto;
+	width: 15cm;
+	padding: 30px;
+	margin: auto;
+	font-family: 'child';
+	font-size: 0.8cm;
+	color: white;
+	border: 10px outset #603300;
+}
+#formConnexion input{
+	border:none;
+	background:none;
+	padding: 5px;
+	font-size: 0.8cm;
+	text-align: center;
+	color:white;
+	font-family: 'Teacher';
+	outline: none;
+}
+#formConnexion input[type=submit]{
+	font-family: 'child';
+	font-size: 1cm;
+}
+#formConnexion input[type=submit]:hover{
+	color: red;
+	font-weight: bold;
+}
+#blocTxt{ /* inscription.html*/
+	border: none;
+	background: none;
+	color: #F7C211;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-family: 'Teacher';
+	font-size: 0.8cm;
+	height: 0.7cm;
+	width: 8cm;
+}
+a{
+	color:black;
+	text-decoration:none;
+}
+#blocIndex{ /* index.html*/
+	padding: 10px;
+	font-weight: 700;
+	text-shadow: none;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+	margin: auto;
+	color:white;
+	text-align: center;
+	font-family: 'Teacher';
+	font-size: 1cm;
+	background: url("blacktab.jpg") no-repeat fixed center/100%;
+	height: auto;
+	width: 9cm;
+	position: relative;
+	border: 10px outset #834202;
+}
+h1{
+	font-family: 'Plum';
+	font-size: 2cm;
+	text-align: center;
+	color:#02042F;
+}
+
+#corps_accueil{
+	background-color: black;
+	background: url("blacktab.jpg") no-repeat fixed center/100%;
+	margin: 1cm;
+	padding: 1cm;
+	height: 15cm;
+	border: 10px outset #603300;
+
+}
+#corps_accueil p{
+	margin: 0px;
+	padding: 0px;
+	text-align: justify;
+	font-family: 'Lecteur';
+	font-size: 0.6cm;
+	color: white;
+}
+
+/* The animation code */
+@keyframes play {
+  0%  {color: black;}
+  34% {color: red;}
+  60% {color: red;}
+  100%{color: black;}
+}
+/* The element to apply the animation to */
+.play_button{
+	margin: 0px;
+	padding: 0px;
+	bottom: 20px;
+	right: 20px;
+}
+.play_button a{
+	padding: 0px;
+	margin: 0px;
+	font-family: 'roadrage';
+	border:none;
+	outline: none;
+	background:none;
+	text-align: center;
+	font-size: 1cm;
+	color: white;
+	animation-name: play;
+  	animation-duration: 3s;
+  	animation-iteration-count: infinite;	
+}
+
+.play_button a:hover{
+	background: rgba(0, 0, 0, 0.6);
+}
+#bvn{
+	font-family: 'Lecteur';
+	font-size: 1cm;
+	padding: 1cm;
+	margin: 1cm;
+	text-align: center;
+}
+tst{
+	color: #FEED01;
+}
+/* PLAY.HTML*/
+#interface_jeu{
+	font-family: 'Lecteur';
+	font-size: 0.8cm;
+	text-align: center;
+}
+#photo_eleve{
+	width: 150px;
+	height: 200px;
+	margin: 15px;
+	padding: 1px;
+	border: 10px outset #603300;
+
+}
+#indice{
+	margin: 5px;
+	padding:5px;
+	font-size: 0.65cm;
+}
+#question{
+	padding: 0px;
+	margin: 20px;
+}
+#reponse input{
+	border:none;
+	padding: 2px;
+	margin: 5px;
+	width: 200px;
+	height: 30px;
+}
