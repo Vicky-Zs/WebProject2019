@@ -214,14 +214,19 @@ h1{
 }
 /* The element to apply the animation to */
 .play_button{
-	margin: 0px;
+	/*margin: 0px;
 	padding: 0px;
 	bottom: 20px;
-	right: 20px;
+	right: 20px;*/
+	display: inline-block;
+	margin-top: 5%;
+	margin-right: 45%;
+	margin-bottom: 5%;
+	margin-left: 45%;
 }
 .play_button a{
-	padding: 0px;
-	margin: 0px;
+	/*padding: 0px;
+	margin: 0px;*/
 	font-family: 'roadrage';
 	border:none;
 	outline: none;
@@ -229,14 +234,24 @@ h1{
 	text-align: center;
 	font-size: 1cm;
 	color: white;
+	padding-right: 10px;
+	padding-left: 10px;
 	animation-name: play;
   	animation-duration: 3s;
   	animation-iteration-count: infinite;	
 }
 
+@keyframes play {
+  0%   {background-color:red; left:0px; top:0px;}
+  50%  {background-color:orange; left:0px; top:0px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+
 .play_button a:hover{
 	background: rgba(0, 0, 0, 0.6);
 }
+
 #bvn{
 	font-family: 'Lecteur';
 	font-size: 1cm;
@@ -244,6 +259,7 @@ h1{
 	margin: 1cm;
 	text-align: center;
 }
+
 tst{
 	color: #FEED01;
 }

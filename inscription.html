@@ -10,22 +10,30 @@
 <body>
 	<h1>Name Memorizer</h1><br>
 	<div id="formIns">
-		<form action="" method="">
+		<form action="registration.php" method="post">
 		<div>
 	        <label for="name">Nom</label>
-	        <input id="blocTxt" type="text" id="name" name="Nom utilisateur" placeholder="ex: DUPONT">
+	        <input id="blocTxt" type="text" id="name" name="lastname" placeholder="ex: DUPONT">
 	    </div>
 	    <div>
 	        <label for="name">Prenom</label>
-	        <input id="blocTxt" type="text" id="name" name="Prenom utilisateur" placeholder="ex: Michel">
+	        <input id="blocTxt" type="text" id="name" name="firstname" placeholder="ex: Michel">
 	    </div>
+		<div>
+	        <label for="name">Pseudo</label>
+	        <input id="blocTxt" type="text" id="name" name="newusername" placeholder="ex: DUPONT">
+		</div>
 	    <div>
 	        <label for="mail">E-mail</label>
-	        <input id="blocTxt" type="email" id="mail" name="Mail utilisateur" placeholder="exemple@xyz.net">
+	        <input id="blocTxt" type="email" id="mail" name="mail" placeholder="exemple@xyz.net">
 	    </div>
 	    <div>
 	    	<label for ="password">Mot de passe</label>
 			<input id="blocTxt" type="password" name="password" placeholder="">
+		</div>
+		<div>
+	    	<label for ="password">Confirmer mot de passe</label>
+			<input id="blocTxt" type="password" name="confirmpassword" placeholder="">
 		</div>
 		<input id="buttonIns" type="submit" name="inscription" value="Je m'inscris !">
 		</form>
