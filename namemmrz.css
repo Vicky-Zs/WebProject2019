@@ -1,34 +1,34 @@
 @font-face{
 	font-family: 'Lecteur';
-	src: url("lecteur_heureux.otf"); 
+	src: url("police/lecteur_heureux.otf"); 
 }
 @font-face{
 	font-family: 'Plum';
-	src: url("PlumBAL.ttf"); 
+	src: url("police/PlumBAL.ttf"); 
 }
 @font-face{
 	font-family: 'Teacher';
-	src: url("Teacher.ttf"); 
+	src: url("police/Teacher.ttf"); 
 }
 @font-face{
 	font-family: 'child';
-	src: url("childwriting.ttf"); 
+	src: url("police/childwriting.ttf"); 
 }
 @font-face{
 	font-family: 'crayon';
-	src: url("CrayonL.ttf"); 
+	src: url("police/CrayonL.ttf"); 
 }
 @font-face{
 	font-family: 'drop';
-	src: url("codropsicons.ttf");
+	src: url("police/codropsicons.ttf");
 }
 @font-face{
 	font-family: 'bellerose';
-	src: url("bellerose.ttf");
+	src: url("police/bellerose.ttf");
 }
 @font-face{
 	font-family: 'roadrage';
-	src: url("road_rage.otf");
+	src: url("police/road_rage.otf");
 }
 
 div a {
@@ -103,7 +103,7 @@ div a {
 /*EFFET 21 FIN*/
 
 body{
-	background: pink url("Lined_002.jpg") no-repeat;
+	background: pink url("background/lined.jpg") no-repeat;
 	background-position: center;
 	background-size: 150%;
 	max-width: 100%;
@@ -119,7 +119,7 @@ body{
 	/*text-shadow: h-shadow v-shadow blur-radius color*/
 }
 #formIns{
-	background-image: url("greentab.jpg");
+	background-image: url("background/greentab.jpg");
 	height: auto;
 	width: 15cm;
 	padding: 30px;
@@ -174,7 +174,7 @@ a{
 	text-align: center;
 	font-family: 'Teacher';
 	font-size: 1cm;
-	background: url("blacktab.jpg") no-repeat fixed center/100%;
+	background: url("background/blacktab.jpg") no-repeat fixed center/100%;
 	height: auto;
 	width: 9cm;
 	position: relative;
@@ -189,7 +189,7 @@ h1{
 
 #corps_accueil{
 	background-color: black;
-	background: url("blacktab.jpg") no-repeat fixed center/100%;
+	background: url("background/blacktab.jpg") no-repeat fixed center/100%;
 	margin: 1cm;
 	padding: 1cm;
 	height: 15cm;
