@@ -124,8 +124,8 @@
 						$userOK = addUser($connection, $username,$lastname,$firstname, $email, $cryptedPw, $salt);
 				
 					  if ($userOK){
-						  echo "<p>L'inscription a été réalisée avec succès.</p>";
-						  echo '<p><a href="formular.html">Retour vers la page d\'accueil.</a></p>';
+						  echo "<div id=\"validation\"><p>L'inscription a été réalisée avec succès.</p>";
+						  echo '<p><a href="accueil.html">Retour vers la page d\'accueil.</a></p></div>';
 						}
 						else{
 							echo "point point point poooooint";

@@ -121,7 +121,7 @@ body{
 #formIns{
 	background-image: url("background/greentab.jpg");
 	height: auto;
-	width: 15cm;
+	width: 25%;
 	padding: 30px;
 	margin: auto;
 	font-family: 'child';
@@ -148,15 +148,41 @@ body{
 	font-weight: bold;
 }
 #blocTxt{ /* inscription.html*/
+	/*border : solid 1px;*/
 	border: none;
 	background: none;
 	color: #F7C211;
+	display: block;
 	padding-left: 5px;
 	padding-right: 5px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	margin-right: auto;
+	margin-left: auto;
 	font-family: 'Teacher';
 	font-size: 0.8cm;
 	height: 0.7cm;
 	width: 8cm;
+}
+
+label {
+	text-align: center;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+#buttonIns{
+	display: block;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#validation{
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 45%;
+	margin-left: 45%;
+	font-family: 'Teacher';
 }
 a{
 	color:black;
