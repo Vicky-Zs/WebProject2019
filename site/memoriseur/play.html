@@ -4,7 +4,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>PLAY</title>
-	<script type="text/javascript" src="namemmrz.js"></script>
 	<link rel="stylesheet" type="text/css" href="namemmrz.css">
 </head>
 <body>
@@ -13,12 +12,14 @@
 		<img id="photo_eleve" src="photos/dumont57u.jpg" alt="Photo d'un élève">
 		<p id="indice">Indice :</p>
 		<div id="reponse">
-			<input type="button" name="choix1" value="nom_eleve">
-			<input type="button" name="choix2" value="nom_eleve">
-			<input type="button" name="choix3" value="nom_eleve">
-			<input type="button" name="choix4" value="nom_eleve">
+			<input type="button" name="choix[]" id="choix1" value="nom_eleve">
+			<input type="button" name="choix[]" id="choix2" value="nom_eleve">
+			<input type="button" name="choix[]" id="choix3" value="nom_eleve">
+			<input type="button" name="choix[]" id="choix4" value="nom_eleve">
 		</div>
 
 	</div>
+	<script type="text/javascript" src="play.js"></script>
+
 </body>
 </html>
