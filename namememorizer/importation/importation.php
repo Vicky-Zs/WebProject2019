@@ -16,7 +16,7 @@ session_start();
 		<h2>Les Classes</h2>
 	</div>
 	<div id="students">
-	
+
 	</div>
 	<div id="addClass">
 		<form action="upload.php" method="post" enctype="multipart/form-data">
@@ -26,7 +26,7 @@ session_start();
 		</form>
 		</form><br>
 	</div>
-	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="upload.js"></script>
 </body>
 </html>

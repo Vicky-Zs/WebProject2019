@@ -1,6 +1,5 @@
-
 <?php  echo "<div id='question'><p id='num_question'></p>Comment s'appelle cet élève ?</div>"?>
-		
+
 			 <?php
 		require_once("base.php")
 
@@ -28,10 +27,10 @@
 	$conn->close();
 	?>
 
-		<?php 
+		<?php
 		echo"<p id="indice">Indice :</p>
-		<form action="memoriseur.php" method ="post" id="reponse">";
-			 
+		<form action="memorizer.php" method ="post" id="reponse">";
+
 
 			echo '<input type="submit" name="choix" id="choix" value="'.$table[$rdTab[0]]["name"]." ".$table[$rdTab[0]]["lastname"].'">';
 			echo '<input type="submit" name="choix" id="choix" value="'.$table[$rdTab[1]]["name"]." ".$table[$rdTab[1]]["lastname"].'">';
@@ -39,18 +38,18 @@
 			echo '<input type="submit" name="choix" id="choix" value="'.$table[$rdTab[3]]["name"]." ".$table[$rdTab[3]]["lastname"].'">';
 			?>
 			<?php if (isset($_POST['score'])){
-				
+
 				$score = $_POST['score'];
 			}
 			else{
 				$score = 0;
-			}		
+			}
 				$answer = $table[$rdTab[$rdID]]["name"]." ".$table[$rdTab[$rdID]]["lastname"];
-			?>			
+			?>
 
 			<?php
-			echo '<input type="hidden" name="answer" value="<?php echo $answer ?>" />';			
-			
+			echo '<input type="hidden" name="answer" value="<?php echo $answer ?>" />';
+
 			if (isset($_POST['choix'])){
 				if($_POST['choix']==$_POST['answer'])
 				{
@@ -61,9 +60,9 @@
 					echo "<p>Faux !</p>";
 					$score--;
 				}
-				
+
 			}
-			echo '<input type="hidden" name="score" value="<?php echo $score ?>" />	
+			echo '<input type="hidden" name="score" value="<?php echo $score ?>" />
 
 		</form>
 		<p>Score : '.$score.'</p>';?>

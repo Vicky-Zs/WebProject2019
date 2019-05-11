@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Upload</title>
-	<script type="text/javascript" src="namemmrz.js"></script>
+	<script type="text/javascript" src="../namemmrz.js"></script>
 	<link rel="stylesheet" type="text/css" href="../namemmrz.css">
 </head>
 <body>

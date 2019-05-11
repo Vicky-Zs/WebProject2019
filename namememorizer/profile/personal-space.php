@@ -3,7 +3,7 @@
 session_start();
 
         // Connect to the database
-        require_once('base.php');
+        require_once('../base.php');
 		$username=$_POST['username'];
 		$_SESSION['username']=$username;
 		$_SESSION['teacher_id']= getID($connection,$username);

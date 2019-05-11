@@ -13,16 +13,16 @@ session_start();
 <body>
 	<div id="interface_jeu">
 		<div id="question"><p id="num_question"></p>Comment s'appelle cet élève ?</div>
-		
+
 			 <?php
-		require_once("base.php")
+		require_once("../base.php")
 
 		if(isset ($_SESSION['teacher_id'])){
 			$id=$_SESSION['teacher_id'];
 		}else{
 			$id=1;
 		}
-		
+
 	$sql = "SELECT id, firstname, lastname, photo FROM students JOIN studentsclasses on students.id=studentsclasses.student_id JOIN teachersclasses on teachersclasses.class_id=studentsclasses.class_id WHERE teachersclasses.teacher_id=".$id;
 	$result = $conn->query($sql);
 	$table = array();
@@ -43,8 +43,8 @@ session_start();
 	?>
 
 		<p id="indice">Indice :</p>
-		<form action="memoriseur.php" method ="post" id="reponse">
-			 <?php 
+		<form action="memorizer.php" method ="post" id="reponse">
+			 <?php
 
 			echo '<input type="submit" name="choix" id="choix" value="'.$table[$rdTab[0]]["name"]." ".$table[$rdTab[0]]["lastname"].'">';
 			echo '<input type="submit" name="choix" id="choix" value="'.$table[$rdTab[1]]["name"]." ".$table[$rdTab[1]]["lastname"].'">';
@@ -52,16 +52,16 @@ session_start();
 			echo '<input type="submit" name="choix" id="choix" value="'.$table[$rdTab[3]]["name"]." ".$table[$rdTab[3]]["lastname"].'">';
 			?>
 			<?php if (isset($_POST['score'])){
-				
+
 				$score = $_POST['score'];
 			}
 			else{
 				$score = 0;
-			}		
+			}
 				$answer = $table[$rdTab[$rdID]]["name"]." ".$table[$rdTab[$rdID]]["lastname"];
-			?>			
+			?>
 
-			<input type="hidden" name="answer" value="<?php echo $answer ?>" />			
+			<input type="hidden" name="answer" value="<?php echo $answer ?>" />
 			<?php
 			if (isset($_POST['choix'])){
 				if($_POST['choix']==$_POST['answer'])
@@ -73,9 +73,9 @@ session_start();
 					echo "<p>Faux !</p>";
 					$score--;
 				}
-				
+
 			}?>
-			<input type="hidden" name="score" value="<?php echo $score ?>" />	
+			<input type="hidden" name="score" value="<?php echo $score ?>" />
 
 		</form>
 		<p>Score : <?php echo $score;?></p>
