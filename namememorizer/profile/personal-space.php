@@ -12,11 +12,11 @@ session_start();
 		$cryptedPw=getCryptedPw($connection,$username);
 		if(hash('sha384', $password.$salt)== $cryptedPw){
 			$_SESSION['id']=getID($connection,$username);
-			header("Location: ../index_accueil_registration/accueil.php");
+			header("Location: ../accueil/accueil.php");
 		}
 
-		
-		
+
+
   function checkUserName($connection, $username){
     $query = "SELECT COUNT(*) AS count FROM users WHERE name=:username";
     $statement = $connection->prepare($query);
