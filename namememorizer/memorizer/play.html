@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>PLAY</title>
-	<link rel="stylesheet" type="text/css" href="namemmrz.css">
+	<link rel="stylesheet" type="text/css" href="../namemmrz.css">
 </head>
 <body>
 	<div id="interface_jeu">
@@ -12,13 +12,14 @@
 		<img id="photo_eleve" src="photos/dumont57u.jpg" alt="Photo d'un élève">
 		<p id="indice">Indice :</p>
 		<div id="reponse">
-			<input type="button" name="choix[]" id="choix1" value="nom_eleve">
-			<input type="button" name="choix[]" id="choix2" value="nom_eleve">
-			<input type="button" name="choix[]" id="choix3" value="nom_eleve">
-			<input type="button" name="choix[]" id="choix4" value="nom_eleve">
+			<input type="button" class="choice" name="choix[]" id="choix1" value="nom_eleve">
+			<input type="button" class="choice" name="choix[]" id="choix2" value="nom_eleve">
+			<input type="button" class="choice" name="choix[]" id="choix3" value="nom_eleve">
+			<input type="button" class="choice" name="choix[]" id="choix4" value="nom_eleve">
 		</div>
-
+		Score : <span id='score'></span>
 	</div>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="play.js"></script>
 
 </body>

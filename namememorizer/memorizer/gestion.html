@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Gestion</title>
+	<script type="text/javascript" src="namemmrz.js"></script>
+	<link rel="stylesheet" type="text/css" href="namemmrz.css">
+</head>
+<body>
+	<div id="my_acc">
+		<a href="accueil.html">Accueil</a>
+		<a href="gestion.html">Mon compte</a>
+		<a href="play.html">Jouer</a>
+	</div>
+	<h1 id="titre_gestion">Mon compte</h1>
+	<div id="mes_classes">
+		<div id="une_classe">
+			<img src="classe1_miniature.png" id="miniature">
+			<div id="nom_classe">L2 SCIENCE CO</div>
+		</div>
+		<div id="menu_classe">
+			<form name="formAddClasse">
+				<div id="champ_txt"><input type="text" name="nom_txt" onchange="afficher_bouton()"></div>
+				<input type="file" name="browse_img" value="Image..." accept="./png, .jpeg">
+				<div id="hidden_bouton" onclick="ajout_classe()"></div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
