@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>Name Memorizer</title>
-	<script type="text/javascript" src="namemmrz.js"></script>
-	<link rel="stylesheet" type="text/css" href="namemmrz.css">
+	<script type="text/javascript" src="../namemmrz.js"></script>
+	<link rel="stylesheet" type="text/css" href="../namemmrz.css">
 
 </head>
 <body>
 	<?php require_once('base.php');?>
 	<h1>Name Memorizer</h1><br>
 	<div id="formIns">
-		<form action="registration.php" method="post">		
+		<form action="registration.php" method="post">
 		<div>
 	        <label for="name">Nom</label>
 	        <input id="blocTxt" type="text" id="name" name="lastname" placeholder="ex: DUPONT">
@@ -22,7 +22,7 @@
 				}else{
 					$ok=false;
 				}
-				?>			
+				?>
 	    </div>
 	    <div>
 	        <label for="name">Prenom</label>
@@ -39,7 +39,7 @@
 	        <input id="blocTxt" type="text" id="name" name="newusername" placeholder="ex: DUPONT">
 			<span id= "error1" class="error">
 				<?php
-				
+
 				if(isset($_POST['newusername']))
 				{
 					$username=$_POST["newusername"];
@@ -56,36 +56,36 @@
 				}else{
 					$ok=false;
 				}
-				?>			
+				?>
 				</span>
-	    </div>		
+	    </div>
 	    <div>
 	        <label for="mail">E-mail</label>
 	        <input id="blocTxt" type="email" id="mail" name="mail" placeholder="exemple@xyz.net">
 				<span id= "error4" class="error">
-						
+
 					<?php
 					if(isset($_POST['mail']))
-					{	
+					{
 						if (strpos($_POST['mail'], '@') === false || strpos($_POST['mail'], '.') === false){
 							echo 'Format de l\'email invalide';
 							$ok=false;
-							
+
 						}else{
 							$email=$_POST['mail'];
 						}
 						}else{
 						$ok=false;
-					}	
+					}
 					?>
-										  
-				</span>			
+
+				</span>
 	    </div>
 	    <div>
 	    	<label for ="password">Mot de passe</label>
 			<input id="blocTxt" type="password" name="password" placeholder="">
 				<span id= "error2" class="error">
-					  
+
 					<?php
 						if(isset($_POST['password']))
 						{	if(strlen($_POST["password"])<8){
@@ -101,7 +101,7 @@
 	    	<label for ="password">Confirmer mot de passe</label>
 			<input id="blocTxt" type="password" name="confirmpassword" placeholder="">
 				<span id= "error3">
-					
+
 					<?php
 					if(isset($_POST['password']) && isset($_POST['confirmpassword']))
 						{if($_POST['password'] != $_POST['confirmpassword']){
@@ -114,15 +114,15 @@
 					}else{
 						$ok=false;
 					}?>
-				</span>			
-		</div>		
+				</span>
+		</div>
 		<input id="buttonIns" type="submit" name="inscription" value="Je m'inscris !">
 		</form>
 	</div>
-					<?php  	
+					<?php
 					if($ok){
 						$userOK = addUser($connection, $username,$lastname,$firstname, $email, $cryptedPw, $salt);
-				
+
 					  if ($userOK){
 						  echo "<div id=\"validation\"><p>L'inscription a été réalisée avec succès.</p>";
 						  echo '<p><a href="accueil.html">Retour vers la page d\'accueil.</a></p></div>';
@@ -130,10 +130,10 @@
 						else{
 							echo "point point point poooooint";
 						}
-						
+
 					}
-					
-					
+
+
 				?>
 
 </body>
@@ -146,7 +146,7 @@
 				$statement->execute();
 				$row = $statement->fetch(PDO::FETCH_ASSOC);
 				return $row["count"] == "0";
-			}		
+			}
 			function addUser($connection,$username,$lastname,$firstname,$email,$cryptedPw,$salt){
 				$query = "INSERT INTO teachers (login,lastname,firstname, email, password, salt) VALUES (:username,:lastname,:firstname, :email, :cryptedPw, :salt)";
 				$statement = $connection->prepare($query);
