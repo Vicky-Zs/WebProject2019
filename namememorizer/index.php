@@ -12,7 +12,7 @@
 	<div id="blocIndex">
 		<div id="connTxt">CONNEXION</div>
 		<div id="formConnexion">
-			<form  action='../profile/personal-space.php' method='post'>
+			<form  action='profile/personal-space.php' method='post'>
 				<input type='text' name='username' placeholder='xyz@exemple.net'><br>
 				<input type='password' name='password' placeholder='Mot de passe'><br>
 				<input type='submit' name='connexion' value='GO'>
