@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<title>Upload</title>
-	<script type="text/javascript" src="../namemmrz.js"></script>
-	<link rel="stylesheet" type="text/css" href="../namemmrz.css">
-</head>
-<body>
 
 <?php
 //code from W3schools
-$target_dir = "../memoriseur/data/";
+$target_dir = "../memorizer/data/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -26,11 +16,7 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
+
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
     echo "Sorry, your file is too large.";
@@ -53,8 +39,26 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-?>
+ // gestion BDD
 
+
+require_once('../base.php');
+
+function addStudent($connection,$lastname,$firstname,$photo){
+	$query = "INSERT INTO students (lastname,firstname,photo) VALUES (:lastname,:firstname, :photo)";
+	$statement = $connection->prepare($query);
+	$statement->bindValue(":lastname", $lastname, PDO::PARAM_STR);
+	$statement->bindValue(":firstname", $firstname, PDO::PARAM_STR);
+	$statement->bindValue(":photo", $photo, PDO::PARAM_STR);
+	$OK = $statement->execute();
+	return $OK;
+}
+if(isset($_POST['firstname'])&&isset($_POST['lastname'])&&isset($_FILES["fileToUpload"]["name"])){
+	addStudent($connection,$_POST['lastname'],$_POST['firstname'],$_FILES["fileToUpload"]["name"]);
+}else{
+	echo 'nop';
+}
+?>
 
 	</div>
 </body>

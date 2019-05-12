@@ -1,7 +1,8 @@
+
 <?php  echo "<div id='question'><p id='num_question'></p>Comment s'appelle cet élève ?</div>"?>
 
 			 <?php
-		require_once("base.php")
+		require_once("../base.php")
 
 		if(isset ($_SESSION['teacher_id'])){
 			$id=$_SESSION['teacher_id'];

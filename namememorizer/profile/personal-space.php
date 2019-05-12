@@ -12,7 +12,7 @@ session_start();
 		$cryptedPw=getCryptedPw($connection,$username);
 		if(hash('sha384', $password.$salt)== $cryptedPw){
 			$_SESSION['id']=getID($connection,$username);
-			header("Location: ../accueil/accueil.php");
+			header("Location: ../accueil.php");
 		}
 
 

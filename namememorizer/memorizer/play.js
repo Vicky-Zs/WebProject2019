@@ -19,7 +19,11 @@ $(".choice").click(function testIfRight(){
 	}
 	nbessais++;
 		$("#score").text(score+"/"+nbessais);
-		insertStudents();	
+		insertStudents();
+	if(nbessais==20)
+	{
+		window.location.href=("results.php?score="+score);
+	}
 });
 function insertStudents(){
 	var tab=[Math.floor(Math.random()*students.length),Math.floor(Math.random()*students.length),Math.floor(Math.random()*students.length),Math.floor(Math.random()*students.length)];
@@ -28,5 +32,5 @@ function insertStudents(){
 	$("#choix3").val(students[tab[2]]["firstname"]+" "+students[tab[2]]["lastname"]);
 	$("#choix4").val(students[tab[3]]["firstname"]+" "+students[tab[3]]["lastname"]);
 	answer =tab[Math.floor(Math.random()*4)];
-	document.getElementById("photo_eleve").src='../memoriseur/data/'+students[answer]['photo'];
+	document.getElementById("photo_eleve").src='../memorizer/data/'+students[answer]['photo'];
 }

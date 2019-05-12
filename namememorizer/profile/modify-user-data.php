@@ -1,84 +1,72 @@
+
 <?php
 session_start();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Name Memorizer</title>
-	<script type="text/javascript" src="namemmrz.js"></script>
-	<link rel="stylesheet" type="text/css" href="../namemmrz.css">
-
-</head>
-<body>
-	<?php require_once('base.php');?>
-	<h1>Name Memorizer</h1><br>
-	<div id="formIns">
-		<form action="modify-user-data.php" method="post">			
+require_once('../base.php');
+	echo '
+		<form action="modify-user-data.php" method="post">
 	    <div>
-	        <label for="mail">E-mail</label>
-					<?php
-					
+	        <label for="mail">E-mail</label>';
+
+
 					if(isset($_POST['mail']))
-					{	
+					{
 						if (strpos($_POST['mail'], '@') === false || strpos($_POST['mail'], '.') === false){
 							echo 'Format de l\'email invalide';
 							$ok=false;
-							
-						}else{
-							modifyMail($connection,$_SESSION['id'],$_POST['mail']);						
-						}						
-					}	
-					?>			
-	        <input id="blocTxt" type="email" id="mail" name="mail" placeholder="<?php echo getMail($connection,$_SESSION['id']);?>">
-						
 
-										  
-				</span>			
+						}else{
+							modifyMail($connection,$_SESSION['id'],$_POST['mail']);
+						}
+					}
+
+	        echo'<input id="blocTxt" type="email" id="mail" name="mail" placeholder="'.getMail($connection,$_SESSION['id']).'">
+
+
+
+				</span>
 	    </div>
 				<input id="buttonIns" type="submit" name="inscription" value="Modifier e-mail">
 		</form>
-		<form action="modify-user-data.php" method="post">					
+		<form action="modify-user-data.php" method="post">
 	    <div>
 	    	<label for ="password">Nouveau mot de passe</label>
 			<input id="blocTxt" type="password" name="password" placeholder="">
-				<span id= "error2" class="error">
-					  
-					<?php
+				<span id= "error2" class="error">';
+
+
 						if(isset($_POST['password']))
 						{	if(strlen($_POST["password"])<8){
 							echo "Au moins 8 caractères";
 							$ok=false;
 						}}
-					?>
-				</span>
+
+				echo '</span>
 		</div>
 	    <div>
 	    	<label for ="password">Confirmer mot de passe</label>
 			<input id="blocTxt" type="password" name="confirmpassword" placeholder="">
-				<span id= "error3">
-					
-					<?php
+				<span id= "error3">';
+
+
 					if(isset($_POST['password']) && isset($_POST['confirmpassword']))
 						{if($_POST['password'] != $_POST['confirmpassword']){
 						echo "Le mot de passe et sa confirmation sont différents";
 						$ok=false;
 					}else{
 						modifyPw($connection,$_SESSION['id'],$_POST['password']);
-						
+
 					}
 						}
-					?>
-				</span>			
-		</div>		
+
+				echo'</span>
+		</div>
 		<input id="buttonIns" type="submit" name="inscription" value="Changer Mot de Passe">
 		</form>
-	</div>
+	';
 
-</body>
 
-		<?php
-	
+
+
 			function addUser($connection,$username,$lastname,$firstname,$email,$cryptedPw,$salt){
 				$query = "INSERT INTO teachers (login,lastname,firstname, email, password, salt) VALUES (:username,:lastname,:firstname, :email, :cryptedPw, :salt)";
 				$statement = $connection->prepare($query);
@@ -118,7 +106,7 @@ session_start();
 					$statement->bindValue(":id", $id, PDO::PARAM_INT);
 					$OK=$statement->execute();
 					return $OK;
-				  }				
+				  }
 			    function getMail($connection, $id){
 					$query = "SELECT email FROM teachers WHERE id=:id ";
 					$statement = $connection->prepare($query);
@@ -126,6 +114,5 @@ session_start();
 					$statement->execute();
 					$row = $statement->fetch(PDO::FETCH_ASSOC);
 					return $row["email"];
-				  }				  
+				  }
 		?>
-</html>
